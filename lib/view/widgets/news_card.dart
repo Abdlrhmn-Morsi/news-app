@@ -1,15 +1,13 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
 import 'my_text.dart';
 
 class NewsCard extends StatelessWidget {
-  var img;
-  var text;
-  NewsCard({
+  dynamic img;
+  dynamic text;
+  NewsCard({Key? key, 
     this.text,
     this.img,
-  });
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(

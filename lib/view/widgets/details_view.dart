@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'custom_appbar.dart';
 import 'my_text.dart';
 
 
 class DetailsView extends StatelessWidget {
-  var headerText;
-  var img;
-  var contentText;
-  var catTitle;
+  dynamic headerText;
+  dynamic img;
+  dynamic contentText;
+  dynamic catTitle;
   DetailsView({
     Key? key,
     required this.headerText,
@@ -72,7 +71,7 @@ class DetailsView extends StatelessWidget {
 
               decoration: BoxDecoration(
                 color: Colors.grey.shade400,
-                borderRadius: BorderRadius.only(
+                borderRadius:const BorderRadius.only(
                   topLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),
                 ),
@@ -80,22 +79,22 @@ class DetailsView extends StatelessWidget {
                   BoxShadow(
                     blurRadius: 5,
                     color: Colors.white.withOpacity(0.7),
-                    offset: Offset(-7, 0),
+                    offset:const Offset(-7, 0),
                   ),
                   BoxShadow(
                     blurRadius: 5,
                     color: Colors.white.withOpacity(0.7),
-                    offset: Offset(0, -7),
+                    offset:const Offset(0, -7),
                   ),
                   BoxShadow(
                     blurRadius: 5,
                     color: Colors.black.withOpacity(0.2),
-                    offset: Offset(7, 0),
+                    offset:const Offset(7, 0),
                   ),
                   BoxShadow(
                     blurRadius: 5,
                     color: Colors.black.withOpacity(0.2),
-                    offset: Offset(0, 7),
+                    offset: const Offset(0, 7),
                   ),
                 ],
               ),

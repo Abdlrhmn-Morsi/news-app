@@ -1,16 +1,13 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class MyText extends StatelessWidget {
-  var text;
-  var color;
+  dynamic text;
+  dynamic color;
   bool isMaxLines;
-
   double fontsize;
-  var fontWeight;
+  dynamic fontWeight;
+
    MyText({
     Key? key,
     this.isMaxLines =false,
