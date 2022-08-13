@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+// ignore: must_be_immutable
 class MyText extends StatelessWidget {
   dynamic text;
   dynamic color;

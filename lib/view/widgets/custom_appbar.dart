@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../search_view.dart';
+import 'package:news_app/const/const.dart';
 import 'my_text.dart';
-
 
 // ignore: must_be_immutable
 class CustomAppbar extends StatelessWidget {
@@ -27,31 +26,41 @@ class CustomAppbar extends StatelessWidget {
           isDetail
               ? IconButton(
                   onPressed: function,
-                  icon: const Icon(Icons.arrow_back),
-                )
-              : IconButton(
-                  onPressed: () {
-                    showSearch(
-                      context: context,
-                      delegate: SearchView(),
-                    );
-                  },
-                  icon: const Icon(Icons.search),
-                ),
-          MyText(
-            text: isDetail ? title : ' أخبار اليوم',
-            color: Colors.black,
-            fontsize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-          isDetail
-              ? Container(
-                  width: 40,
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 30,
+                  ),
                 )
               : IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.menu),
                 ),
+          MyText(
+            text: title,
+            fontsize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+          ),
+          isDetail
+              ? Container(
+                  width: 40,
+                )
+              : Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.dark_mode_outlined,
+                        ),
+                      ),
+                      Container(
+                        child: personAppbar,
+                      ),
+                    ],
+                  ),
+                )
         ],
       ),
     );

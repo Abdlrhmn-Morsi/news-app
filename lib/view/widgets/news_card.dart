@@ -15,7 +15,7 @@ class NewsCard extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 200,
+            height: 250,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               // gradient: LinearGradient(colors: [
@@ -29,7 +29,7 @@ class NewsCard extends StatelessWidget {
             ),
           ),
           Container(
-            height: 200,
+            height: 250,
             decoration: BoxDecoration(
               color: Colors.amber,
               borderRadius: BorderRadius.circular(8),
@@ -44,9 +44,9 @@ class NewsCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 135,
-            right: 15,
+            right: 10,
             left: 10,
+            bottom: 15,
             child: MyText(
               text: text,
             ),
