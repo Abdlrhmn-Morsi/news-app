@@ -18,10 +18,7 @@ class NewsCard extends StatelessWidget {
             height: 250,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              // gradient: LinearGradient(colors: [
-              //   Colors.red.withOpacity(0.5),
-              //   Colors.black.withOpacity(0.3),
-              // ]),
+           
               image: DecorationImage(
                 image: NetworkImage(img),
                 fit: BoxFit.cover,
@@ -49,6 +46,7 @@ class NewsCard extends StatelessWidget {
             bottom: 15,
             child: MyText(
               text: text,
+              color: Colors.white,
             ),
           ),
         ],

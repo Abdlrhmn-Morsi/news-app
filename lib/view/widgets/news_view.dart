@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+import 'package:news_app/controller/dark_mode_controller.dart';
 import 'package:news_app/view/screens/details_view.dart';
 import 'package:news_app/view/widgets/my_text.dart';
 import 'package:news_app/view/widgets/news_card.dart';
@@ -38,11 +39,15 @@ class NewsView extends StatelessWidget {
                       left: 8,
                       bottom: 8,
                     ),
-                    child: MyText(
-                      text: ' Breaking News .. ',
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.bold,
-                      fontsize: 20,
+                    child: GetBuilder<DarkModeController>(
+                      builder: (controller) => MyText(
+                        text: ' Breaking News .. ',
+                        color: controller.getThemeFromBox()
+                            ? Colors.deepPurple.shade200
+                            : Colors.deepPurple,
+                        fontWeight: FontWeight.bold,
+                        fontsize: 20,
+                      ),
                     ),
                   ),
                   Hero(
@@ -69,16 +74,24 @@ class NewsView extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        MyText(
-                          text: ' Todays\'s New .. ',
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
-                          fontsize: 20,
+                        GetBuilder<DarkModeController>(
+                          builder: (controller) => MyText(
+                            text: ' Todays\'s New .. ',
+                            color: controller.getThemeFromBox()
+                                ? Colors.deepPurple.shade200
+                                : Colors.deepPurple,
+                            fontWeight: FontWeight.bold,
+                            fontsize: 20,
+                          ),
                         ),
-                        MyText(
-                          text: 'See all ',
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold,
+                        GetBuilder<DarkModeController>(
+                          builder: (controller) => MyText(
+                            text: 'See all ',
+                            color: controller.getThemeFromBox()
+                                ? Colors.deepPurple.shade200
+                                : Colors.deepPurple,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),

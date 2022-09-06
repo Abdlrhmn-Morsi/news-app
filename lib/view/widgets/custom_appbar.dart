@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:news_app/const/const.dart';
+import 'package:news_app/controller/dark_mode_controller.dart';
 import 'my_text.dart';
 
 // ignore: must_be_immutable
@@ -18,6 +19,7 @@ class CustomAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DarkModeController controller = Get.find();
     return SizedBox(
       width: Get.width,
       child: Row(
@@ -32,14 +34,20 @@ class CustomAppbar extends StatelessWidget {
                   ),
                 )
               : IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
                   icon: const Icon(Icons.menu),
                 ),
-          MyText(
-            text: title,
-            fontsize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
+          GetBuilder<DarkModeController>(
+            builder: (controller) => MyText(
+              text: title,
+              fontsize: 22,
+              fontWeight: FontWeight.bold,
+              color: controller.getThemeFromBox()
+                  ? Colors.deepPurple.shade200
+                  : Colors.deepPurple,
+            ),
           ),
           isDetail
               ? Container(
@@ -50,7 +58,9 @@ class CustomAppbar extends StatelessWidget {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.switchTheme();
+                        },
                         icon: const Icon(
                           Icons.dark_mode_outlined,
                         ),

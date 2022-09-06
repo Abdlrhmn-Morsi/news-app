@@ -12,7 +12,7 @@ class MyText extends StatelessWidget {
    MyText({
     Key? key,
     this.isMaxLines =false,
-    this.color =Colors.white,
+    this.color ,
     this.fontsize = 16,
     this.fontWeight,
     required this.text,
