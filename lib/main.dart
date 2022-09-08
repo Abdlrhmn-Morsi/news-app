@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:news_app/controller/dark_mode_controller.dart';
 import 'package:news_app/view/screens/home_view.dart';
 import 'const/themes.dart';
 import 'controller/get_data.dart';
 import 'controller/injection.dart';
 
-void main() {
-  runApp(const MyApp());
+void main()async {
+   WidgetsFlutterBinding.ensureInitialized();
+   await GetStorage.init();
   Injection();
+  runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(
     (const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
