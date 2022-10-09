@@ -5,7 +5,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:news_app/controller/dark_mode_controller.dart';
 import 'package:news_app/view/screens/home_view.dart';
 import 'const/themes.dart';
-import 'controller/get_data.dart';
 import 'controller/injection.dart';
 
 void main()async {
